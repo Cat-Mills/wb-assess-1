@@ -31,11 +31,12 @@ function sum(num1, num2) {
   If 'data' is a falsy value, return a false boolean.
 */
 
-function trueOrFalse(data){
-  if (data === data){
-    return true}
+function trueOrFalse(data) {
+  if (data === data) {
+    return true;
+  }
   if (!data) {
-    return false
+    return false;
   }
 }
 
@@ -47,11 +48,11 @@ function trueOrFalse(data){
   If the number is even, return the string: 'the number is even'.
 */
 
-function oddChecker(num){
-  if (num % 2 === 0){
-    return ('the number is even')}
-  else {
-    return ('the number is odd')
+function oddChecker(num) {
+  if (num % 2 === 0) {
+    return "the number is even";
+  } else {
+    return "the number is odd";
   }
 }
 
@@ -62,21 +63,21 @@ function oddChecker(num){
   "NAMEPARAM loves LOVEPARAM" with the appropriate parameters in the string. e.g. "Joseph loves music"
 */
 
-function iLove(name,love){
-  return `${name} loves ${love}`
+function iLove(name, love) {
+  return `${name} loves ${love}`;
 }
-console.log
+console.log;
 //////////////////PROBLEM 8////////////////////
 /* Create a copy of the faveColors array called 'colorCopy' using the slice method. */
 
 const faveColors = ["red", "green", "black"];
 
-let colorCopy = faveColors.slice() //By leaving () empty, it automatically starts at the first item in the index
+let colorCopy = faveColors.slice(); //By leaving () empty, it automatically starts at the first item in the index
 
 //////////////////PROBLEM 9////////////////////
 /* Add a fourth color to the end of the 'colorCopy' array using the push method. */
 
-colorCopy.push("blue")
+colorCopy.push("blue");
 
 //////////////////PROBLEM 10////////////////////
 /*
@@ -86,7 +87,7 @@ colorCopy.push("blue")
 
 const numbers = [1, 2, 3, 4, 5];
 
-const middleNums = numbers.slice(1,4) //By assigning a start and end number to the index, we can start the copy and end it in the middle of the og index. In this case, the end number has to be the one AFTER the last value we need because that is where it stops.
+const middleNums = numbers.slice(1, 4); //By assigning a start and end number to the index, we can start the copy and end it in the middle of the og index. In this case, the end number has to be the one AFTER the last value we need because that is where it stops.
 
 //////////////////PROBLEM 11////////////////////
 /*
@@ -102,7 +103,14 @@ const middleNums = numbers.slice(1,4) //By assigning a start and end number to t
   For example: 'Hello! My name is Joseph and I live in Utah"
 */
 
-//CODE HERE
+const me = {
+  firstName: "Cat",
+  state: "Dying inside",
+  age: 22,
+  greeter: function greeter() {
+    return "Hello! My name is ${firstName} and I live in ${state}";
+  },
+};
 
 //////////////////PROBLEM 12////////////////////
 /* 
@@ -116,8 +124,17 @@ const middleNums = numbers.slice(1,4) //By assigning a start and end number to t
   to the answers array. 
   Return the answers array inside of the function.
 */
-
-// CODE HERE
+//FIXME returning 'small' for every value
+function bigOrSmall(arr) {
+  let answers = [];
+  for (a = 0; a < arr.length; a++) {
+    if (arr.a > 100) {
+      answers.push("big");
+    } else if (arr.a <= 100) {
+      answers.push("small");
+    }
+  }
+}
 
 //////////////////PROBLEM 13////////////////////
 /* 
@@ -128,9 +145,14 @@ const middleNums = numbers.slice(1,4) //By assigning a start and end number to t
   to the 'reversed' array variable you created. 
   Finally, return the 'reversed' array variable.
 */
-
-//CODE HERE
-
+//FIXME not returning correct array
+function arrayReverser(arr){
+  let reversed =[]
+  for (a = arr.length - 1; a >= 0; a--){
+  reversed = (arr[a])}{
+    return (reversed)
+  }
+} 
 //////////////////PROBLEM 14////////////////////
 
 let global = "cool string";
@@ -155,16 +177,16 @@ function secondFunction() {
 */
 
 //This array should contain the variable names (as strings) accessible in the global scope.
-let globalScope = ["global", "inner", "outer", "functional"];
+let globalScope = ["global"];
 
 //This array should contain the variable names (as strings) accessible in the firstFunction function.
-let firstFunctionScope = ["global", "inner", "outer", "functional"];
+let firstFunctionScope = ["global", "outer",];
 
 //This array should contain the variable names (as strings) accessible in the innerFunction function.
-let innerFunctionScope = ["global", "inner", "outer", "functional"];
+let innerFunctionScope = ["global", "inner", "outer",];
 
 //This array should contain the variable names (as strings) accessible in the secondFunction function.
-let secondFunctionScope = ["global", "inner", "outer", "functional"];
+let secondFunctionScope = ["global", "functional"];
 
 //////////////////PROBLEM 15////////////////////
 /* 
@@ -172,7 +194,9 @@ let secondFunctionScope = ["global", "inner", "outer", "functional"];
   Invoke the callback passing the first item in the array as an argument.
 */
 
-//CODE HERE
+function firstItem(arr1,cb1){
+  cb1(arr1[0])
+}
 
 //////////////////PROBLEM 16////////////////////
 /* 
@@ -182,7 +206,12 @@ let secondFunctionScope = ["global", "inner", "outer", "functional"];
   Otherwise, invoke the callback passing in false.
 */
 
-//CODE HERE
+function isItBob(ob1,cb1){
+  if(ob1.name === 'Bob'){
+    cb1(true)
+  }
+  else {cb1(false)}
+}
 
 //////////////////PROBLEM 17////////////////////
 /*
@@ -190,11 +219,30 @@ let secondFunctionScope = ["global", "inner", "outer", "functional"];
   Use a for loop to double all numbers in the array.
   Then invoke the callback, passing in the doubled array.
 */
-
-//CODE HERE
+function giveMeDoubles(arr,cb){
+  let doubled = Array.from(arr, x => x * 2); //This creates a new array
+  cb(doubled)
+}
+//EXAMPLE FROM WEB//
+/*function doubled (arr) {
+  var doubled = [];
+  for (var i = 0; i < arr.length; i++) {
+      doubled.push(arr[i] * 2);
+  }
+  return doubled;
+}
+*/
+//FIXME this one didn't work. Used the ex above as a template
+// function giveMeDoubles(arr,cb){
+//   let doubled = [];
+//   for (i = 0; i < arr.length - 1; i++){
+//       doubled.push(arr[i] * 2);
+//   }
+//   cb(doubled)
+// }
 
 //////////////////PROBLEM 18////////////////////
-/*
+/*FIXME come back later hun
   Write a function called carFactory that takes in three parameters: a make, model, and year.  
   When the function is invoked:
     - a string will be sent in for make
@@ -218,4 +266,16 @@ let secondFunctionScope = ["global", "inner", "outer", "functional"];
   }
 */
 
-//CODE HERE
+function carFactory(make,model,year){
+  let car = {
+    make: make,
+    model: model,
+    year: year,
+    isNew: function isNew(year) {
+      if(year > 2018){
+        return car.isNew(true)
+      }
+    }
+  }
+}
+
