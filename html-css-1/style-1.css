@@ -8,41 +8,58 @@ body {
 .Header {
     background-color: salmon;
     width: 100%;
-    height: 20vh;
+    height: 15vh;
 }
 
 .HTML {
     background-color: white;
-    width: 100%;
     height: 40vh;
+    margin: 10px;
+    border-width: 10px;
+    border-color: black;
+    border-style: dotted;
+    display: block;
 }
 
 .CSS {
     background-color: white;
-    width: 100%;
     height: 40vh;
+    margin: 10px;
+    border-width: 10px;
+    border-color: black;
+    border-style: dotted;
+    display: block;
 }
 
 #title {
     height: 100%;
-    width: 40vh;
+    width: 100%;
     display: inline block;
-    
 }
 
-#tabs {
+/* #tabs {
     height: 100%;
     width: 60vh;
-    display: inline-block;
     margin: auto;
-    
-}
+    display: inline-block;
+} */
 h1 {
-    width: 100%;
-    text-align: left;
-    vertical-align: left;
+    /* width: 40%; */
+    /* text-align: left; */
+    /* color: black; */
     font-weight: bold;
     font-size: 30px;
-    color: black;
-    padding: 90px 30px 20px 20px;
+    vertical-align: middle;
+    padding: 30px;
+    padding-top: 60px;
+    display: inline-block;
+}
+h3 {
+    /* width: 50%; */
+    word-spacing: 70px;
+    font-size: 25px;
+    vertical-align: middle;
+    padding: 30px;
+    padding-top: 60px;
+    display: inline-block;
 }
