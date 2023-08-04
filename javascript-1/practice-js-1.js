@@ -232,7 +232,8 @@ function giveMeDoubles(arr,cb){
   return doubled;
 }
 */
-//FIXME this one didn't work. Used the ex above as a template
+//this one didn't work. Used the ex above as a template
+
 // function giveMeDoubles(arr,cb){
 //   let doubled = [];
 //   for (i = 0; i < arr.length - 1; i++){

@@ -1,12 +1,12 @@
 //////////////////STEP 1////////////////////
 /* Create an array called 'groceries' that contains three grocery items of your choice as strings. */
 
-//CODE HERE
+let groceries = ["eggs","milk","bread"]
 
 //////////////////STEP 2////////////////////
 /* Create a variable called 'yourName' that is assigned the value of your name as a string. */
 
-//CODE HERE
+const yourName = "Cat"
 
 //////////////////STEP 3////////////////////
 /*
@@ -16,7 +16,9 @@
     the function would return 'Joseph's Grocery List'.
 */
 
-//CODE HERE
+function setGroceryListTitle(x){
+    return `${x}'s Grocery List` //Don't forget to use `` instead of '' or "" when using ${}!!!
+}
 
 //////////////////STEP 4////////////////////
 /* 
@@ -26,7 +28,10 @@
     that takes care of some of the work for getting your page to display correctly.
 */
 
-//CODE HERE
+function addItem(item){
+    groceries.push(item) // Doesn't work without the push function!!
+    displayData()
+}
 
 //////////////////STEP 5////////////////////
 /*
@@ -36,10 +41,13 @@
     Then, invoke the displayData() function inside of your removeItem function.
 */
 
-//CODE HERE
+function removeItem(index){
+    groceries.splice(index)
+    displayData()
+}
 
 //////////////////STEP 6////////////////////
-/*
+/* FIXME I am doing if else statements wrong. Not sure how.
     Create a function called 'checkGroceryCount'. Inside of checkGroceryCount, 
     you're going to check the total number of groceries in your groceries array using .length. 
     Using an if/else statement, check if the number of groceries is greater than 5. 
@@ -49,7 +57,20 @@
     with NUMBEROFGROCERIES replaced by the number of items in your groceries array.
 */
 
-//CODE HERE
+function checkGroceryCount(){
+    let NUMBEROFGROCERIES = []
+    for (let n = 0; n < groceries.length; n++) {
+        if (n > 5){
+            return('That looks like a big trip');
+        }
+        if (n === 1){
+            return('1 item');
+        } 
+        if (n <= 5 && n < 1){
+            return(`${NUMBEROFGROCERIES} items`)
+        }
+    }
+}
 
 //////////////////Check out your code!////////////////////
 /*
