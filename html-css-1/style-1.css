@@ -63,3 +63,9 @@ h3 {
     padding-top: 60px;
     display: inline-block;
 }
+
+#aboutHTML5 {
+    height: 10vh;
+    width: 100%;
+    display: inline-block;
+}
