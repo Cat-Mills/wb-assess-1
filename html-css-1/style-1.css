@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     background-color: white;
@@ -19,6 +23,7 @@ body {
     border-color: black;
     border-style: dotted;
     display: block;
+    position: relative;
 }
 
 .CSS {
@@ -29,6 +34,7 @@ body {
     border-color: black;
     border-style: dotted;
     display: block;
+    position: relative;
 }
 
 #title {
@@ -48,7 +54,7 @@ h1 {
     /* text-align: left; */
     /* color: black; */
     font-weight: bold;
-    font-size: 30px;
+    font-size: 33px;
     vertical-align: middle;
     padding: 30px;
     padding-top: 60px;
@@ -68,4 +74,43 @@ h3 {
     height: 10vh;
     width: 100%;
     display: inline-block;
+    position: relative;
+}
+
+#aboutCSS3 {
+    height: 10vh;
+    width: 100%;
+    display: inline-block;
+    position: relative;
+}
+
+h2 {
+    margin: 20px;
+    margin-top: 40px;
+    font-size: 25px;
+    font-weight: bold;
+    display: inline-block;
+
+}
+
+p {
+    /* display: inline-block; */
+    text-align: justify;
+    padding: 10px;
+}
+info {
+    height: 100%;
+    width: auto;
+    position: relative;
+    display: inline-block;
+}
+img {
+    height: 150px;
+    /* display: inline-block; */
+}
+#css3logo {
+    float: right;
+}
+#html5logo {
+    float: left;
 }
