@@ -47,7 +47,7 @@ function removeItem(index){
 }
 
 //////////////////STEP 6////////////////////
-/* FIXME I am doing if else statements wrong. Not sure how.
+/* -- I am doing if else statements wrong. Not sure how. --
     Create a function called 'checkGroceryCount'. Inside of checkGroceryCount, 
     you're going to check the total number of groceries in your groceries array using .length. 
     Using an if/else statement, check if the number of groceries is greater than 5. 
@@ -56,21 +56,32 @@ function removeItem(index){
     If the amount of groceries is between 1 and 5, return the string 'NUMBEROFGROCERIES items' 
     with NUMBEROFGROCERIES replaced by the number of items in your groceries array.
 */
-
+//This is the correct answer. FIGURE IT OUT
 function checkGroceryCount(){
-    let NUMBEROFGROCERIES = []
-    for (let n = 0; n < groceries.length; n++) {
-        if (n > 5){
-            return('That looks like a big trip');
-        }
-        if (n === 1){
-            return('1 item');
-        } 
-        if (n <= 5 && n < 1){
-            return(`${NUMBEROFGROCERIES} items`)
-        }
+    if(groceries.length > 5){
+        return 'That looks like a big trip'
+    } else if (groceries.length === 1){
+        return '1 item'
+    } else if (groceries.length >= 2 && groceries.length <= 4){
+        return `${groceries.length} items`
     }
 }
+
+//My attempt. (Broken)
+// function checkGroceryCount(){
+//     let NUMBEROFGROCERIES = []
+//     for (let n = 0; n < groceries.length; n++) {
+//         if (n > 5){
+//             return('That looks like a big trip');
+//         }
+//         if (n === 1){
+//             return('1 item');
+//         } 
+//         if (n <= 5 && n < 1){
+//             return(`${NUMBEROFGROCERIES} items`)
+//         }
+//     }
+// }
 
 //////////////////Check out your code!////////////////////
 /*

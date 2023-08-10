@@ -30,15 +30,22 @@ function sum(num1, num2) {
   If it is, return a true boolean. 
   If 'data' is a falsy value, return a false boolean.
 */
-
-function trueOrFalse(data) {
-  if (data === data) {
-    return true;
-  }
-  if (!data) {
-    return false;
+function trueOrFalse(data){
+  if(data) {
+    return true
+  } else {
+    return false
   }
 }
+//Doesn't work
+// function trueOrFalse(data) {
+//   if (data === data) {
+//     return true;
+//   }
+//   if (!data) {
+//     return false;
+//   }
+// }
 
 //////////////////PROBLEM 6////////////////////
 /*
@@ -107,8 +114,8 @@ const me = {
   firstName: "Cat",
   state: "Dying inside",
   age: 22,
-  greeter: function greeter() {
-    return "Hello! My name is ${firstName} and I live in ${state}";
+  greeter: function greeter() { //a "method" is a function attached to an object
+    return `Hello! My name is ${firstName} and I live in ${state};`
   },
 };
 
@@ -219,10 +226,19 @@ function isItBob(ob1,cb1){
   Use a for loop to double all numbers in the array.
   Then invoke the callback, passing in the doubled array.
 */
-function giveMeDoubles(arr,cb){
-  let doubled = Array.from(arr, x => x * 2); //This creates a new array
-  cb(doubled)
+// This is the "correct" answer
+function giveMeDoubles(nums,cb) {
+  for(let i = 0; i < nums.length; i++) {
+    nums[i] *= 2
+  }
+  cb(nums)
 }
+
+// This one works but doesn't use what we learned this week
+// function giveMeDoubles(arr,cb){
+//   let doubled = Array.from(arr, x => x * 2); //This creates a new array
+//   cb(doubled)
+// }
 //EXAMPLE FROM WEB//
 /*function doubled (arr) {
   var doubled = [];
@@ -236,7 +252,7 @@ function giveMeDoubles(arr,cb){
 
 // function giveMeDoubles(arr,cb){
 //   let doubled = [];
-//   for (i = 0; i < arr.length - 1; i++){
+//   for (i = 0; i < arr.length; i++){
 //       doubled.push(arr[i] * 2);
 //   }
 //   cb(doubled)
@@ -266,17 +282,33 @@ function giveMeDoubles(arr,cb){
     isNew: true
   }
 */
-
-function carFactory(make,model,year){
-  let car = {
-    make: make,
-    model: model,
-    year: year,
-    isNew: function isNew(year) {
-      if(year > 2018){
-        return car.isNew(true)
-      }
-    }
+// This one works! Too bad I didn't write it...
+function carFactory(make, model, year){
+  const car = {
+    make, //doing "make," instead of "make = make" assigns both the key and the value to "make"
+    model,
+    year,
+  //isNew: year > 2018 ? true : false ---This is a short hand version of the if else statement below
   }
+  if(year > 2018){
+    car.isNew = true
+  } else {
+    car.isNew = false
+  }
+  return car
 }
+
+//My attempt (incorrect)
+// function carFactory(make,model,year){
+//   let car = {
+//     make: make,
+//     model: model,
+//     year: year,
+//     isNew: function isNew(year) {
+//       if(year > 2018){
+//         return car.isNew(true)
+//       }
+//     }
+//   }
+// }
 
